@@ -45,7 +45,7 @@ class Login extends React.Component {
                     </div>
 
                     <Button variant="primary" className="login-btn" onClick={() => this.userLogin()}>Login</Button>
-                    <a href="/home" className="forgot-pwd">Forgot Password? Click here to reset</a>
+                    <a href="/home" className="forgot-pwd">Forgot Password? Click here to reset.</a>
                     
                   
                 </Col>
