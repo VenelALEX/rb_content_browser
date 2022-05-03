@@ -12,8 +12,6 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Alert from 'react-bootstrap/Alert'
-import { Route,Navigate } from 'react-router-dom'
 
 class Login extends React.Component {
 
@@ -47,7 +45,7 @@ class Login extends React.Component {
                     </div>
 
                     <Button variant="primary" className="login-btn" onClick={() => this.userLogin()}>Login</Button>
-                    <a className="forgot-pwd">Forgot Password? Click here to reset</a>
+                    <a href="#" className="forgot-pwd">Forgot Password? Click here to reset</a>
                     
                   
                 </Col>
