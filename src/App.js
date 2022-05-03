@@ -10,8 +10,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Base />} />
+          <Route path="/rb_content_browser/" element={<Login />} />
+          <Route path="/rb_content_browser/home" element={<Base />} />
         </Routes>
       </div>
     );
