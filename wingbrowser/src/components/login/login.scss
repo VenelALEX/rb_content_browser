@@ -1,0 +1,57 @@
+/*
+author:       Alexander BRENNER
+description:  WingBrowser - Small Content browser web application
+date:         03/05/22
+filename:     login.css
+*/
+
+@import '../../index.scss';
+
+.login-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+
+.login-mask{
+    width: 350px;
+    border: 2px solid $wb_dark_blue;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.login-input-fields{
+    text-align: left;
+    padding: 30px;
+}
+
+.login-input{
+    margin: 25px 0px;
+}
+
+.login-btn{
+    margin: 15px 0px;
+    font-size: 24px !important;
+    letter-spacing: 1px;
+    background-color: $wb_dark_blue !important;
+}
+
+.login-btn:hover{
+    background-color: $wb_orange !important;
+    border-color: $wb_orange !important;
+}
+
+.forgot-pwd, .forgot-pwd:visited, .forgot-pwd:active{
+    color: $wb_dark_blue;
+    display: block;
+    text-decoration: none;
+}
+
+.forgot-pwd:hover{
+    color: $wb_orange;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}

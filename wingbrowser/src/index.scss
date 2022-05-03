@@ -1,0 +1,31 @@
+/*
+
+Colors
+
+Orange: #DB5461
+Gray: #686963
+Aqua: #8AA29E
+Dark-Blue: #3D5467
+Cultured: #F1EDEE
+
+*/
+
+$wb_orange: #DB5461;
+$wb_gray: #686963;
+$wb_aqua: #8AA29E;
+$wb_dark_blue: #3D5467;
+$wb_cultured: #F1EDEE;
+
+
+body {
+  margin: 0;
+  font-family: 'Teko', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
