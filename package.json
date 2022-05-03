@@ -1,7 +1,7 @@
 {
   "name": "wingbrowser",
   "version": "0.1.0",
-  "homepage": "https://VenelALEX.github.io/",
+  "homepage": "https://VenelALEX.github.io/rb_content_browser",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
