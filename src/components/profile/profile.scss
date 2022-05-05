@@ -2,5 +2,11 @@
 author:       Alexander BRENNER
 description:  WingBrowser - Small Content browser web application
 date:         03/05/22
-filename:     footer.css
+filename:     profile.scss
 */
+
+@import '../../index.scss';
+
+.profile-wrap{
+    height: 100vh;
+}

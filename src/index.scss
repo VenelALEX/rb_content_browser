@@ -1,27 +1,25 @@
 /*
 
-Colors
-
-Orange: #DB5461
-Gray: #686963
-Aqua: #8AA29E
-Dark-Blue: #3D5467
-Cultured: #F1EDEE
-
 */
 
-$wb_orange: #DB5461;
-$wb_gray: #686963;
-$wb_aqua: #8AA29E;
-$wb_dark_blue: #3D5467;
-$wb_cultured: #F1EDEE;
+$wb_red: #E21B4D;
+$wb_light_red: #fa2056;
+$wb_silver: #D9D4CE;
+$wb_yellow: #ffd400;
+$wb_dark_blue: #001c39;
+$wb_blue: #1D19AC;
+$wb_white: #F4EBEE;
 
+*{
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
-  font-family: 'Teko', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FFFFFF;
 }
 
 code {

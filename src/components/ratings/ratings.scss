@@ -4,3 +4,9 @@ description:  WingBrowser - Small Content browser web application
 date:         03/05/22
 filename:     base.css
 */
+
+@import '../../index.scss';
+
+.ratings-wrap{
+    height: 100vh;
+}

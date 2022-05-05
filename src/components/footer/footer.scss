@@ -1,0 +1,30 @@
+/*
+author:       Alexander BRENNER
+description:  WingBrowser - Small Content browser web application
+date:         03/05/22
+filename:     footer.css
+*/
+@import '../../index.scss';
+
+.footer{
+    background-color: $wb_dark_blue;
+    color: white;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0px -3px 0px $wb_red;
+}
+
+.wb-footer-link{
+    padding-left: 0px !important;
+}
+
+.wb-footer-text{
+    color: #ffffff;
+    margin: 0px;
+}
+
+.wb-footer-block{
+    margin: 20px 0px;
+}

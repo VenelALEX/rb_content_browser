@@ -5,18 +5,18 @@ date:         03/05/22
 filename:     base.js
 */
 
-import './base.scss';
+import './ratings.scss';
 import React from 'react';
 
-class Base extends React.Component {
+class Ratings extends React.Component {
 
   render(){
     return (
-      <div className="base-wrap">
-        <h1>Currently under construction: Content</h1>
+      <div className="ratings-wrap">
+        <h1>Currently under construction: Ratings</h1>
       </div>
     );
   }
 }
 
-export default Base;
+export default Ratings;

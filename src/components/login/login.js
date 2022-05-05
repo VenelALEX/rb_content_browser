@@ -32,14 +32,14 @@ class Login extends React.Component {
             <Container fluid="md">
               <Row>
                 <Col>
-                    <h1>WingBrowser</h1>
+                    <h1 className="wb-headline">WingBrowser</h1>
                     <div className="login-input-fields">
                       <div className="login-input">
-                        <Form.Label htmlFor="inp-username">Username</Form.Label>
+                        <Form.Label htmlFor="inp-username" className="wb-label">Username</Form.Label>
                         <Form.Control type="text" id="inp-username"/>
                       </div>
                       <div className="login-input">
-                        <Form.Label htmlFor="inp-password">Password</Form.Label>
+                        <Form.Label htmlFor="inp-password" className="wb-label">Password</Form.Label>
                         <Form.Control type="password" id="inp-password"/>
                       </div>
                     </div>

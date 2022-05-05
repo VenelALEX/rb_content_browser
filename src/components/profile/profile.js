@@ -2,21 +2,21 @@
 author:       Alexander BRENNER
 description:  WingBrowser - Small Content browser web application
 date:         03/05/22
-filename:     base.js
+filename:     profile.js
 */
 
-import './base.scss';
+import './profile.scss';
 import React from 'react';
 
-class Base extends React.Component {
+class Profile extends React.Component {
 
   render(){
     return (
-      <div className="base-wrap">
-        <h1>Currently under construction: Content</h1>
+      <div className="profile-wrap">
+        <h1>Currently under construction: Profile</h1>
       </div>
     );
   }
 }
 
-export default Base;
+export default Profile;

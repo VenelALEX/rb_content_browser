@@ -1,0 +1,29 @@
+/*
+author:       Alexander BRENNER
+description:  WingBrowser - Small Content browser web application
+date:         03/05/22
+filename:     navbar.css
+*/
+
+@import '../../index.scss';
+
+.wb-nav{
+    background-color: $wb_dark_blue !important;
+    box-shadow: 0px 3px 0px $wb_red;
+}
+
+.wb-nav-link{
+    font-weight: 800;
+    color: #FFFFFF !important;
+    transition: 0.1s ;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.wb-nav-link:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 35px;
+    transition: 0.1s ;
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
