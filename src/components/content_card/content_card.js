@@ -11,6 +11,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Badge from 'react-bootstrap/Badge'
 import ReactPlayer from 'react-player'
+import StarRatings from 'react-star-ratings';
+import db from '../../firebase-config.js'
+import { collection, addDoc } from "firebase/firestore"; 
+
 
 class ContentCard extends React.Component {
 
@@ -20,13 +24,20 @@ class ContentCard extends React.Component {
                   contentUrl: props.contentUrl, previewUrl: props.previewUrl}
   }
 
-  addRating(rating){
+  async changeRating( newRating, name ) {
+    var email_s = sessionStorage.getItem("Email")
     
+    await addDoc(collection(db, "ratings"), {
+      content_id: name,
+      rating: newRating,
+      user_id: email_s
+
+    });
   }
 
   render(){
     return (
-      <div className="content-card">
+      <div className="content-card" data-aos="fade-up">
         <ReactPlayer width="100%" height="200px" light={this.state.previewUrl} url={this.state.contentUrl} controls={true}/>
         <h5 className="wb_content_title">{this.state.title}</h5>
         <Badge className="primary wb-pill" pill>
@@ -35,11 +46,14 @@ class ContentCard extends React.Component {
         <p>{this.state.description}</p>
 
         <div className="ratings-container">
-          <FontAwesomeIcon icon={faStar} id="wb-star-1" className="ratings-star" onClick={() => this.addRating(1)}/>
-          <FontAwesomeIcon icon={faStar} id="wb-star-2" className="ratings-star" onClick={() => this.addRating(2)}/>
-          <FontAwesomeIcon icon={faStar} id="wb-star-3" className="ratings-star" onClick={() => this.addRating(3)}/>
-          <FontAwesomeIcon icon={faStar} id="wb-star-4" className="ratings-star" onClick={() => this.addRating(4)}/>
-          <FontAwesomeIcon icon={faStar} id="wb-star-5" className="ratings-star" onClick={() => this.addRating(5)}/>
+          <StarRatings
+          rating={this.state.rating}
+          starHoverColor="#ffd400"
+          changeRating={this.changeRating}
+          numberOfStars={5}
+          starDimension="25px"
+          name={this.state.id}
+          />
         </div>
       </div>
     );

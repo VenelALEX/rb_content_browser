@@ -31,7 +31,8 @@ class Login extends React.Component {
     var authentification = getAuth();
     signInWithEmailAndPassword(authentification, email, pwd).then((response) => {
       sessionStorage.setItem("Auth Token", response._tokenResponse.refreshToken)
-      sessionStorage.setItem("Email", email)
+      sessionStorage.setItem("Email", email);
+      this.props.userAllowedTrueHandler();
       this.props.navigate("/rb_content_browser/content");
     }).catch((error) => {
       if(error.code === 'auth/wrong-password'){

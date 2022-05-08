@@ -34,6 +34,7 @@ class Register extends React.Component {
       createUserWithEmailAndPassword(authentification, email, pwd).then((response) => {
         sessionStorage.setItem("Auth Token", response._tokenResponse.refreshToken)
         sessionStorage.setItem("Email", email)
+        this.props.userAllowedTrueHandler();
         this.props.navigate("/rb_content_browser/content");
       }).catch((error) => {
         if(error.code === 'auth/email-already-in-use'){

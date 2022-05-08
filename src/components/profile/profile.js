@@ -29,6 +29,7 @@ class Profile extends React.Component {
 
   userLogout(){
     sessionStorage.removeItem('Auth Token');
+    this.props.userAllowedFalseHandler();
     this.props.navigate('/rb_content_browser/')
   }
 
