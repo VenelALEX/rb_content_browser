@@ -29,7 +29,7 @@ class Register extends React.Component {
     var pwd = $("#inp-password").val();
     var pwdWH = $("#inp-password-wh").val();
 
-    if(pwd == pwdWH){
+    if(pwd === pwdWH){
       var authentification = getAuth();
       createUserWithEmailAndPassword(authentification, email, pwd).then((response) => {
         sessionStorage.setItem("Auth Token", response._tokenResponse.refreshToken)

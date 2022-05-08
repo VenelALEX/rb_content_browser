@@ -429,7 +429,7 @@ class Ratings extends React.Component {
         var ratings_count = 0;
         var ratings_sum = 0;
         for(var j=0; j < testdata.length; j++){
-          if(testdata[i].id == testdata[j].id){
+          if(testdata[i].id === testdata[j].id){
             ratings_count += 1;
             ratings_sum += testdata[j].rating
           }
@@ -448,7 +448,7 @@ class Ratings extends React.Component {
   loadContentData(sortedData){
     for(var i=0; i < sortedData.length; i++){
       for(var j=0; j < video_db.length; j++){
-        if(video_db[j].id == sortedData[i].id){
+        if(video_db[j].id === sortedData[i].id){
           sortedData[j].title = video_db[j].title;
           sortedData[j].topic = video_db[j].topic;
           sortedData[j].contentUrl = video_db[j].contentUrl;
@@ -472,7 +472,7 @@ class Ratings extends React.Component {
                         <ListGroup.Item
                           as="li"
                           className="d-flex justify-content-between align-items-start"
-                          variant={index % 2 != 0 ? "secondary" : ""}
+                          variant={index % 2 !== 0 ? "secondary" : ""}
                           key={index}
                         >
                           <div className="ms-2 me-auto">
