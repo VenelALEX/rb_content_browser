@@ -12,6 +12,9 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import $ from "jquery"
+import {withRouter} from "../withRouter/withRouter"
 
 class Login extends React.Component {
 
@@ -21,8 +24,29 @@ class Login extends React.Component {
   }
 
   userLogin(){
-    console.log("Test")
+
+    var email = $("#inp-username").val();
+    var pwd = $("#inp-password").val();
+
+    var authentification = getAuth();
+    signInWithEmailAndPassword(authentification, email, pwd).then((response) => {
+      sessionStorage.setItem("Auth Token", response._tokenResponse.refreshToken)
+      sessionStorage.setItem("Email", email)
+      this.props.navigate("/rb_content_browser/content");
+    }).catch((error) => {
+      if(error.code === 'auth/wrong-password'){
+        $(".wb-notification-center").text("Check your password.");
+        $(".wb-notification-center").css("display", "block")
+      }if(error.code === "auth/user-not-found"){
+        $(".wb-notification-center").text("Check your e-mail address.");
+        $(".wb-notification-center").css("display", "block")
+      }else{
+        $(".wb-notification-center").text("An error occured while signing you in.");
+        $(".wb-notification-center").css("display", "block")
+      }
+    })
   }
+
 
   render(){
     return (
@@ -35,7 +59,7 @@ class Login extends React.Component {
                     <h1 className="wb-headline">WingBrowser</h1>
                     <div className="login-input-fields">
                       <div className="login-input">
-                        <Form.Label htmlFor="inp-username" className="wb-label">Username</Form.Label>
+                        <Form.Label htmlFor="inp-username" className="wb-label">E-Mail address</Form.Label>
                         <Form.Control type="text" id="inp-username"/>
                       </div>
                       <div className="login-input">
@@ -44,8 +68,12 @@ class Login extends React.Component {
                       </div>
                     </div>
 
+                    <div className="wb-notification-center">
+                      The passwords do not match. Please verify two type in identical passwords.
+                    </div>
+
                     <Button variant="primary" className="login-btn" onClick={() => this.userLogin()}>Login</Button>
-                    <a href="/home" className="forgot-pwd">Forgot Password? Click here to reset.</a>
+                    <a href="/rb_content_browser/register" className="forgot-pwd">New to WingBrowser? Register now.</a>
                     
                   
                 </Col>
@@ -58,4 +86,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

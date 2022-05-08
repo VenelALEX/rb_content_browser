@@ -8,5 +8,29 @@ filename:     base.css
 @import '../../index.scss';
 
 .ratings-wrap{
-    height: 100vh;
+    height: auto;
+}
+
+.ratings-mask-wrap{
+    margin: 15px 0px;
+    border-radius: 15px;
+    font-size: 24px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 8px 15px -2px rgb(211, 208, 208);
+    text-align: left;
+    padding: 15px;
+}
+
+.wb-rating-link{
+    color: black;
+    text-decoration: none;
+}
+
+.wb-rating-link:hover{
+    color: $wb_red;
+    text-decoration: none;
+}
+
+.wb-pill{
+    background-color: $wb_red !important;
 }

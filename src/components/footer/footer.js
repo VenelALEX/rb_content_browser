@@ -26,7 +26,8 @@ class Footer extends React.Component {
                         </Col>
                         <Col lg="4" className="wb-footer-block">
                             <h4 className="wb-headline">Support</h4>
-                            <a href="/rb_content_browser/dsgvo" className="wb-nav-link wb-footer-link">Datenschutzerklärung</a>
+                            <a href="/rb_content_browser/gdpr" className="wb-nav-link wb-footer-link">GDPR</a>
+                            <p className="wb-footer-text">Imprint | Maintainer </p>
                             <p className="wb-footer-text">Alexander Brenner </p>
                             <p className="wb-footer-text">5020 Salzburg</p>
                             <p className="wb-footer-text">a.reinhardbrenner@gmail.com</p>
@@ -34,6 +35,8 @@ class Footer extends React.Component {
                         <Col lg="4" className="wb-footer-block">
                             <h4 className="wb-headline">Technologies</h4>
                             <a href="https://react-bootstrap.github.io/" className="wb-nav-link wb-footer-link">React Bootstrap</a><br/>
+                            <a href="https://www.npmjs.com/package/react-player" className="wb-nav-link wb-footer-link">React Player</a><br/>
+                            <a href="https://firebase.google.com/?gclid=Cj0KCQjw1N2TBhCOARIsAGVHQc708Hn1wXMsayb9Pm1EhZSmSmJVApctN3AprLUWRJEqnLeuvEpfBDcaAnoMEALw_wcB&gclsrc=aw.ds" className="wb-nav-link wb-footer-link">Firebase</a><br/>
                         </Col>
                     </Row>
                 </Container>

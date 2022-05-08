@@ -1,0 +1,82 @@
+/*
+author:       Alexander BRENNER
+description:  WingBrowser - Small Content browser web application
+date:         03/05/22
+filename:     login.css
+*/
+
+@import '../../index.scss';
+
+.login-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    color: #000000;
+}
+
+.login-mask{
+    width: 350px;
+    border-radius: 15px;
+    font-size: 24px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 8px 15px -2px rgb(211, 208, 208);
+}
+
+.login-input-fields{
+    text-align: left;
+    padding: 30px;
+}
+
+.login-input{
+    margin: 25px 0px;
+}
+
+.login-btn{
+    margin: 15px 0px;
+    padding: 10px 40px !important;
+    font-size: 14px !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background-color: $wb_red !important;
+    border-color: $wb_red !important;
+}
+
+.login-btn:hover{
+    background-color: $wb_light_red !important;
+    border-color: $wb_red !important;
+    color: #FFFFFF !important;
+}
+
+.forgot-pwd, .forgot-pwd:visited, .forgot-pwd:active{
+    color: $wb_red;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.forgot-pwd:hover{
+    color: $wb_red;
+    display: block;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.wb-headline{
+    font-weight: 800;
+}
+
+.wb-label{
+    color: gray;
+    font-size: 16px;
+}
+
+.wb-notification-center{
+    border: 1px solid $wb_red;
+    font-size: 16px;
+    color: $wb_red;
+    border-radius: 5px;
+    display: none;
+}

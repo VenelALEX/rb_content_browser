@@ -1,0 +1,36 @@
+/*
+author:       Alexander BRENNER
+description:  WingBrowser - Small Content browser web application
+date:         03/05/22
+filename:     base.css
+*/
+
+@import '../../index.scss';
+
+.content-card{
+    width: 100%;
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: #FFFFFF;
+    padding: 15px;
+    box-shadow: 0px 8px 15px -2px rgb(211, 208, 208);
+    text-align: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin: 15px 0px;
+}
+
+.wb_content_title{
+    font-weight: 800;
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 320px;
+}
+
+.ratings-star{
+    color: $wb_silver;
+}
+
+.ratings-star:hover{
+    color: $wb_yellow;
+}
