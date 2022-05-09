@@ -7,8 +7,6 @@ filename:     base.js
 
 import './content_card.scss';
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Badge from 'react-bootstrap/Badge'
 import ReactPlayer from 'react-player'
 import StarRatings from 'react-star-ratings';

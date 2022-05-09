@@ -12,7 +12,7 @@ import Badge from 'react-bootstrap/Badge'
 import Container from 'react-bootstrap/Container'
 import {withRouter} from "../withRouter/withRouter"
 import db from '../../firebase-config.js'
-import { collection, query, where, getDocs, getDoc } from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import { SpinnerCircular } from 'spinners-react';
 
 
