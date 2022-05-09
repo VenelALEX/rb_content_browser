@@ -13,7 +13,7 @@ import Badge from 'react-bootstrap/Badge'
 import ReactPlayer from 'react-player'
 import StarRatings from 'react-star-ratings';
 import db from '../../firebase-config.js'
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc, updateDoc, getDocs, where, query } from "firebase/firestore"; 
 
 
 class ContentCard extends React.Component {
@@ -21,18 +21,35 @@ class ContentCard extends React.Component {
   constructor(props){
     super(props);
     this.state = {id: props.id, mediaType: props.mediaType, title: props.title, topic: props.topic, description: props.description,
-                  contentUrl: props.contentUrl, previewUrl: props.previewUrl}
-  }
+                  contentUrl: props.contentUrl, previewUrl: props.previewUrl, rating: props.rating}
+    this.changeRating = this.changeRating.bind(this);
+    }
 
   async changeRating( newRating, name ) {
     var email_s = sessionStorage.getItem("Email")
-    
-    await addDoc(collection(db, "ratings"), {
-      content_id: name,
-      rating: newRating,
-      user_id: email_s
 
+    var modeUpdate = 0;
+
+    var q = query(collection(db, "ratings"), where("user_id", "==", sessionStorage.getItem("Email")), where("content_id", "==", name));
+    var querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      updateDoc(doc.ref, {
+        rating: newRating
+      })
+      modeUpdate = 1;
     });
+    
+    if(modeUpdate){
+      this.setState({rating: newRating})
+      return;
+    }else{
+      await addDoc(collection(db, "ratings"), {
+        content_id: name,
+        rating: newRating,
+        user_id: email_s
+      });
+      this.setState({rating: newRating})
+    }
   }
 
   render(){
@@ -46,9 +63,11 @@ class ContentCard extends React.Component {
         <p>{this.state.description}</p>
 
         <div className="ratings-container">
+          My Rating: 
           <StarRatings
           rating={this.state.rating}
           starHoverColor="#ffd400"
+          starRatedColor="#ffd400"
           changeRating={this.changeRating}
           numberOfStars={5}
           starDimension="25px"
