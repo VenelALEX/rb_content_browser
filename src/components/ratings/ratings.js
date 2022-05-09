@@ -60,8 +60,9 @@ class Ratings extends React.Component {
     for(var i=0; i < sortedData.length; i++){
       var q = query(collection(db, "wb_content"), where("id", "==", sortedData[i].id));
       var querySnapshot = await getDocs(q);
+      var data = null;
       querySnapshot.forEach((doc) => {
-        var data = doc.data()
+        data = doc.data()
         sortedData[i].title = data.title;
         sortedData[i].topic = data.topic;
         sortedData[i].contentUrl = data.contentUrl;
