@@ -69,8 +69,8 @@ class Base extends React.Component {
             this.state.content.map((element, index) => {
               var element_rating = this.searchRating(element);
                 return(
-                  <Col>
-                    <ContentCard key={index}
+                  <Col key={index}>
+                    <ContentCard
                       id={element.id} 
                       mediaType={element.mediaType} 
                       title={element.title} 

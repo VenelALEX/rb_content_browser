@@ -26,27 +26,22 @@ class App extends React.Component {
 
   setToken(){
     var token = sessionStorage.getItem("Auth Token")
-    console.log(token);
     if(token){
       this.userAllowedTrueHandler();
     }else{
-      console.log("no token")
       this.userAllowedFalseHandler();
     }
   }
 
   userAllowedTrueHandler(){
-    console.log("Activate User")
     this.setState({userAllowed: true});
   }
 
   userAllowedFalseHandler(){
-    console.log("Deactivate User")
     this.setState({userAllowed: false});
   }
 
   render(){
-    console.log(this.state.userAllowed)
     return (
       <div className="App">
         <Routes>
